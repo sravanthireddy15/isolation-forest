@@ -1,0 +1,592 @@
+Skip to primary navigation
+Skip to content
+Skip to primary sidebar
+Skip to footer
+PYNATIVE
+
+A Python Programming blog
+
+Tutorials
+Python MySQL
+Python PostgreSQL
+Generate Random Data
+Python Secrets Module
+Python UUID Module
+Python Basics
+Python Exercises
+<>Code Editor
+Python Tricks
+Newsletter
+Show Search
+Python range() Function Explained with Examples
+Filed Under: Python Basic | April 24, 2019 7 Comments
+
+In this article, We will learn what does range function do in python and how to use python range() function. range() is a built-in function of python. The range() function generates the integer numbers between the given start integer to the stop integer, which is generally used to iterate over with for Loop.
+
+This article is part of our series Python Basics.
+Solve our Free Python Basic Exercise for Beginners to practice Python essential skills.
+Solve our Free Python Quiz For Beginners.
+
+ 
+Python range() accepts an integer and returns a range object, which is nothing but a sequence of integers. Let’s understand how to use range() function with the help of simple examples.
+
+print("range function example")
+print("Printing range function result")
+for i in range(6):
+    print(i, end=', ')
+Output: 
+ Execute Online
+
+python range() function
+range function example
+Printing range function result
+0, 1, 2, 3, 4, 5,
+In the output, we got integers from 0 to 5. range() function doesn’t include the last number in the result. The most common use of range() function in python is to iterate sequence type (List, string etc ) with for and while loop.
+
+Python range() function syntax and arguments
+Syntax:
+
+range (start, stop[, step])
+range() takes three arguments.
+Out of the three 2 arguments are optional. I.e., Start and Step are the optional arguments.
+A start argument is a starting number of the sequence. i.e., lower limit. By default, it starts with 0 if not specified.
+A stop argument is an upper limit. i.e.generate numbers up to this number, The range()  function doesn’t include this number in the result.
+The step is a difference between each number in the result. The default value of step is 1 if not specified.
+Python range() function Examples
+Let see all the possible scenarios now. Below is the three variant of range() function.
+
+Example one – Using only one argument in range()
+
+print("Print first 5 numbers using range function")
+for i in range(5):
+    print(i, end=', ')
+ Execute Online
+Output:
+
+Print first 5 numbers using range function
+0, 1, 2, 3, 4,
+Only stop argument is passed to range() function.
+So by default, it takes start = 0 and step = 1.
+Example Two – using two arguments (i.e., start and stop) in range() function
+
+print("Print integers within given start and stop number using range() function")
+for i in range(5, 10):
+    print(i, end=', ')
+Output: 
+ Execute Online
+
+Print integers within given start and stop number using range() function
+5, 6, 7, 8, 9,
+Only two arguments (the start and stop) are passed to the range function.
+So by default, it took step argument value as 1.
+Example Three – using all three arguments in range() function
+
+print("using start, stop, and step arguments in Python range() function")
+print("Printing All odd numbers between 1 and 10 using range()")
+for i in range(1, 10, 2):
+    print(i, end=', ')
+Output: 
+ Execute Online
+
+using start, stop, and step arguments in Python range() function
+Printing All odd numbers between 1 and 10 using range()
+1, 3, 5, 7, 9,
+All the three arguments are specified. i.e. start = 1, stop = 10, step = 2. Note:- In the above program step value is 2 so the difference between each number is 2.
+
+Points to remember about python range() function arguments
+range() function only works with the integers i.e., whole numbers.
+All argument must be integers. You can not pass a string or float number or any other type in a start, stop and step argument of a range().
+All three arguments can be positive or negative.
+The step value must not be zero. If a step is zero python raises a ValueError exception.
+Python range() with for loop
+As you know for loop executes a block of code or statement repeatedly for the fixed number of times. Using for loop we can iterate over a sequence of numbers produced by the range() function.
+
+Let see this with an example. Suppose we have a list of 5 numbers and you want to display each element by doubling it let see how to do it using a for loop and range() function.
+
+print("Double the list numbers using for loop and range() function")
+list = [3, 6, 9, 12, 15]
+for i in range(len(list)):
+    print( "Elment Index[", i, "]", "Previous Value ", list[i], "Now ", list[i] * 2)
+Output: 
+ Execute Online
+
+Double the list numbers using for loop and range() function
+Elment Index[ 0 ] Previous Value  3 Now  6
+Elment Index[ 1 ] Previous Value  6 Now  12
+Elment Index[ 2 ] Previous Value  9 Now  18
+Elment Index[ 3 ] Previous Value  12 Now  24
+Elment Index[ 4 ] Previous Value  15 Now  30
+Here using a len(list), we got total elements of a list so we can iterate for loop fixed number of time. In each iteration using a range() function loop gets the index of the current element.
+Note: variable i is not getting the value 0, 1, 2, 3, 4 at the same time. i get value sequentially. i.e., in the first iteration i= 0. in the second iteration i become 1 and so on.
+Python for loop with range() function
+Python for loop with range() function
+I have created a program using for loop and range() function to print various numeric patterns to understand the use of for loop and range function.
+Python range inclusive
+
+ 
+The range(n) is of exclusive nature that is why it doesn’t include the last number in the output.  i.e., The given end point is never part of the generated result.
+
+For example, range(0, 5) = [0,1,2,3,4]. I.e. it generates integers from 0 to up to 5 but doesn’t include 5. If you want to include the last number in the output i.e., If you want an inclusive range then pass stop argument value as stop+step.
+
+Inclusive range() example in Python.
+
+print("Printing inclusive range")
+start = 1
+stop  = 5 
+step  = 1
+# to get inclusive range change stop as stop+step
+stop +=step #now stop is 6
+for i in range(start, stop, step):
+    print(i, end=', ')
+Execute Online
+Output:
+
+Printing inclusive range
+1, 2, 3, 4, 5,
+Example 2: Inclusive range
+
+print("Printing inclusive range")
+start = 2
+stop  = 10 
+step  = 2
+# to get inclusive range change stop as stop+step
+stop +=step #now stop is 12
+for i in range(start, stop, step):
+    print(i, end=', ')
+Output: 
+Execute Online
+
+Printing inclusive range
+2, 4, 6, 8, 10,
+Python range Step
+A step is an optional argument in the range function. The step is a difference between each number in the sequence. The default size of a step is 1 if not specified. If the step size is 2, then the difference between each number is 2.
+
+We can perform lots of operations by effectively using step argument such as reversing a sequence, printing negative ranges.
+
+
+ 
+Decrementing with range using negative step
+We can use negative values in all the arguments of range() function i.e., start, stop and step. Let us see how.
+
+start = -2
+stop = -10
+step = -2
+print("Negative number range")
+for number in range(start, stop, step):
+    print(number, end=', ')
+Output: 
+ Execute Online
+
+Negative number range
+-2, -4, -6, -8,
+Let’s understand above program:
+
+we set, start = -2stop = -10, step = -2.
+
+in the 1st iteration of for loop  = [-2].
+in the 2nd iteration of for loop = [-2,-4]  because -2+(-2) == -4 and so on
+and Last iteration output is [-2,-4,-6,-8]
+Decrementing with the range from Negative to Positive number
+
+Here in this example, we can learn how to use step argument to display a range of numbers from negative to positive.
+
+print ("printing range from negative to positive")
+for num in range(-2,5,1):
+    print(num, end=", ")
+The output of the above program
+
+printing range from negative to positive
+-2, -1, 0, 1, 2, 3, 4,
+Python range from Positive to Negative number
+
+Here in this example, we can learn how to use step argument effectively to display numbers from positive to negative.
+
+print (" printing range from Positive to Negative")
+for num in range(2,-5,-1):
+    print(num, end=", ")
+Output: 
+ Execute Online
+
+printing range from Positive to Negative
+2, 1, 0, -1, -2, -3, -4,
+Convert Python range() to List
+Python 3’s range uses the generator. Python 3’s range() will produce value when for loop iteration asked for it. i.e., it  The range() doesn’t produce all numbers at once.
+
+Python range() function returns an immutable sequence object of integers, so its possible to convert range() output to python list. Use list class to convert range output to list. Let’s understand this with the following example.
+
+print("Converting python range() to list")
+even_list = list( range(2,10,2))
+print("printing list", even_list)
+Output: 
+ Execute Online
+
+Converting python range() to list
+printing list [2, 4, 6, 8]
+Using float Numbers in Python range()
+Python range() function doesn’t support the float numbers.  i.e., we cannot use floating-point or non-integer number in any of its argument. we can use only integer numbers.
+
+However, we can create a custom range function where we can use float numbers like 0.1 or 1.6 in any of its argument. I have demonstrated this in the below example.
+
+def frange(start, stop=None, step=None):
+    if stop == None:
+        stop = start + 0.0
+        start = 0.0
+    if step == None:
+        step = 1.0
+    while True:
+        if step > 0 and start >= stop:
+            break
+        elif step < 0 and start <= stop:
+            break
+        yield ("%g" % start) # return float number
+        start = start + step
+print ("Printing float range")
+list = frange(0.5, 1.0, 0.1)
+for num in list:
+    print (num)
+Output: 
+ Execute Online
+
+Printing float range
+0.5
+0.6
+0.7
+0.8
+0.9
+Also, see other ways to use float numbers in range() function.
+
+Reverse range in python
+If you want to print sequence of numbers within range by descending order or reverse order then its possible, there are two ways to do this.
+
+First is to use a negative or down step value. i.e., set the third argument of a range() to -1.
+
+For example, if you want to display a number sequence like [5,4,3,2,1]. Use negative step value. The following code shows the same.
+
+print ("Displaying list of numbers by reverse order using range()")
+for number in range(4,-1,-1):
+    print (number, end=', ')
+Output: 
+ Execute Online
+
+Displaying list of numbers by reverse order using range()
+4, 3, 2, 1, 0
+Alternatively, use the reversed function.
+
+The reversed function used to reverse a list of any type. To use the reversed function you need to convert a range output to list first. Let see this with an example.
+
+print ("Printing reversed range")
+reverseed_range = list(reversed(range(0,5)))
+print(reverseed_range)
+Output: 
+ Execute Online
+
+Printing reversed range
+[4, 3, 2, 1, 0]
+Python’s range() vs xrange() Functions
+range() function works differently between Python 3 and Python 2.
+
+The difference between range() and xrange() functions becomes relevant only when you are using python 2. Because in Python 3  xrange() is renamed to range() and original range() function was deprecated.
+Working of range and xrange in Python 2
+
+Both the range() and xrange() function generates the sequence of numbers. but range()produce a list, and xrange()produces an xrange object i.e. a sequence object of type xrange.
+range() generates all numbers at once.
+xrange() doesn’t generate all numbers at once. it produces number one by one as for loop moves to the next number
+We can test the type of these functions In Python 2 with the following examples: –
+
+range()xrange()Python 3's range()
+print type(range(10)) 
+Output = type 'list'.
+Do you know why they deprecated original python2’s range() function in Python 3? The main reason behind deprecation of the original range() function is memory and speed. Please take a look at range() vs xrange() and their use for more in detail information
+Should we always favor range() over xrange()?
+If you are using python 2.x then yes. as you know in python 2.x range() function loads all the numbers in the main memory before iterating them by for loop this leads to high memory usage and increased execution speed.
+
+If you want to write code that will run on both Python 2 and Python 3, you should use range().
+
+xrange() and range() which is more efficient.
+Python range() over character or alphabet
+Is there a way print range of characters or alphabets? For example like this.
+
+for char in range ('a','z'):
+    print (char)
+Note: Above code is a pseudo-code.
+
+Yes, It’s possible using the custom generator. let’s see the example. in the following example, I have demonstrated how to generate  ‘a’ to ‘z’ alphabet using the custom range() function. this is inclusive, means it also includes the last character.
+Here we used a ASCII value range and then convert an ASCII value to a letter using a Chr() function.
+
+Python Program to Generate letters from ‘a’ to ‘z’ using custom range() function
+
+print ("""Generates the characters from `a` to `z`, inclusive.""")
+def character_range(char1, char2):
+    for char in range(ord(char1), ord(char2)+1):
+        yield (char)
+for letter in character_range('a', 'z'):
+    print( chr(letter), end=", " )
+Generates the characters from `a` to `z`, inclusive.
+a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, w, x, y, z,
+How does the Python range() function work?
+Python range() return value is determined by formula and some value constraints.
+
+range[n] = start + step * n ( for both positive and negative step value )
+For Positive step value 
+   n >=0 and range[n] < stop
+For Negative step value
+   n >= 0 and range[n] > stop
+Note: If a step is a non-zero, Python range() function checks the value constraint. range() returns an Empty sequence If it doesn’t meet the value constraint.
+
+So you must be thinking why does python range(start, end) not include end ?  it has a very simple answer because index always starts with ZERO in python. if you count total numbers between range (5) you will get [0,1,2,3,4] i.e. total count is 5.
+
+Concatenating the result of two range() function in python
+Let say you want to add range(5) + range(10,15). (Note: this code is a pseudo-code.)  And you want the concatenated range like [0, 1, 2, 3, 4, 10, 11, 12, 13, 14].
+
+Can we concatenate the output of two range functions?
+
+Yes, this is possible using itertools. using chain() function of itertools we can do this.
+
+Program: Concatenating two range function results.
+
+from itertools import chain
+print ("Concatinated two range() function")
+concatenated_range = chain(range(10), range(50, 75))
+for num in concatenated_range:
+    print(num,end=", ")
+Output: 
+ Execute Online
+
+Concatinated two range() function
+0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74,
+Access Python range() result with its index value
+range() is constructor returns a range object which is nothing but a sequence of numbers, this range object can also be accessed by its index using slice notation. It supports both positive and negative indices. below example explains the same.
+
+print("accessing python range objet with its index")
+first_number = range(0,10)[0] #printing 0th position number i.e. index ZERO means first number
+print("First number in given range is:  ", first_number)
+fifth_number = range(0,10)[4]
+print("fifth number in given range is:  ", fifth_number)
+Output: 
+ Execute Online
+
+accessing python range objet with its index
+First number in given range is:   0
+fifth number in given range is:   4
+you can also convert python range() output to list and access this list with its index like this.
+
+sample_list = list( range(1,10) )
+print ("second element is ", sample_list[1] )
+Output:
+
+second element is  2
+Next Steps
+
+ 
+To practice what you learned in this article, I have created a Python Basic Quiz and Exercise.
+
+Solve our Free Python essential exercise for beginners. This Exercise will help you to have a better understanding of Python basic concepts.
+Also, Solve our  Basic Python Quiz for beginners to test your fundamental Python skills.
+Let me know your comments and feedback in the section below.
+
+
+ABOUT VISHAL
+Founder of pynative.com. I am a Python developer and I love to write articles to help developers. Follow me on Twitter | Happy Pythoning!
+
+Related Articles
+
+ 
+Python Exercises
+Python Tricks
+Keep Reading
+Python Basic (10),  Python MySQL (14),  Python PostgreSQL (8),  Python Exercises (11),  Python Generate Random Data (13),  Python Quizzes (3)
+Reader Interactions
+Comments
+Emma says
+
+July 13, 2018 at 6:51 am
+Thanks for your informative article on Python range .As you have described it beautifuuly and easily.
+
+Reply
+Vishal says
+
+July 13, 2018 at 10:04 pm
+I am glad you Liked it
+
+Reply
+Philip says
+
+February 2, 2019 at 10:54 am
+Thanks for a very well written article with many examples. I found some typos:
+(all tested with Python Shell 3.7.1)
+1) First example, there should be a comma after the 2 0, 1, 2,
+2) Second example is also missing the trailing comma after the 4
+3) In the second example under the heading “Python range() with for loop”,
+in the print function, there is a missing comma after index print(“List[” , index, “]==”,list[index])
+and in the example output, there should be a 4 not 0 inside the square brackets of the last line
+4) Your example for “Python range inclusive” is only true if the increment is 1
+5) In the section “Reverse range in python” the stated goal is the list [5,4,3,2,1] but the example
+shows 4, 3, 2, 1, 0 which was not the goal, and is also missing the trailing comma
+6) The reversed list example fails as follows:
+>>> reverseed_range = list(reversed(range(0,5)))
+Traceback (most recent call last):
+File “”, line 1, in
+reverseed_range = list(reversed(range(0,5)))
+TypeError: ‘list’ object is not callable
+
+7) having pseudo code like:
+for char in range (‘a’,’z’):
+print (char)
+can be misleading for someone skimming the article, and mistaking it for valid python syntax
+
+The same for the concatenation example that looks like it is valid code.
+8) In this section “Access Python range() result with its index value” , the second indexed value
+with an index of 5 is fetching the sixth element of the range
+9) the last example for sample_list gives me the same traceback report as (6) above.
+
+Thanks again for the article.
+
+Reply
+Vishal says
+
+February 2, 2019 at 1:59 pm
+Hi Philip. Thank you for your comments. it is output typo mistakes(missing commas in the few of the outputs). its updated now
+
+6) The reversed list example fails as follows: Philip it is working as expected I rechecked it.
+7) Yes, it is a pseudo-code I have added a warning there wherever I added pseudo-code
+8) It is typing mistake I was fetching the sixth element. updated the example.
+9) It is working correctly
+
+Once again thanks for the review. Appreciated.:)
+
+Reply
+Anon says
+
+February 4, 2019 at 11:31 pm
+The output for ‘Example One’ is missing a comma at the end :
+
+Print first 5 numbers using range function
+0, 1, 2, 3, 4,
+
+Reply
+Vishal says
+
+February 5, 2019 at 8:53 am
+Hey, Anon Thank you. I have added comma.
+
+Reply
+aliya says
+
+February 11, 2019 at 11:09 am
+This is very good content you share on this blog. it’s very informative and provide me future related information.
+
+Reply
+Leave a Reply
+Your email address will not be published. Required fields are marked *
+
+Comment
+
+Name *
+
+Email *
+
+Website
+
+Primary Sidebar
+
+ 
+Python Basic Exercise
+Free Exercise for Beginners to Practice Python’s Basic Questions Online
+Solution Provided for Each Question
+Show Exercise
+
+ 
+Python Basic Tutorials
+Python Input and Output
+Check user input is String or Number
+Accept List as a input from user
+Python range function
+Python range for float Numbers
+Python range vs xrange
+Python Basic Exercise for Beginners
+Python isinstance()
+Python String Exercise
+Python Basic Quiz for Beginners
+
+ 
+Python Quiz For Beginners
+Quiz provides Multiple Choice Questions to get familiar with Python
+Quiz focuses on testing your basic skills on Python essential functions, string, operators, functions, set and lists.
+Start Quiz
+
+ 
+Python Tips and Tricks
+Get useful Python Tips and Tricks into your Inbox Every WEEK.
+For example, Calculate time elapsed to execute your code.
+import time
+startTime = time.time()
+#Write Your Code
+endTime = time.time()
+totalTime = endTime - startTime
+Show all Tips & Tricks
+Subscribe To Our Newsletter
+I'm determined to improve your Python skills, are You? Subscribe and Get New Python Tutorials, Exercises, Tips and Tricks into your Inbox Every Week.
+
+E-Mail Address
+E-Mail Address
+No Spam. Unsubscribe any time!
+
+Give us Your Valuable feedback
+Are you satisfied with our site? *
+SatisfiedUnsatisfied
+Tell us why (Optional)
+Please type a reason. so we can improve Thank you!
+Email (Optional)
+Submit
+Python Exercises
+Python Basic Exercise for Beginners
+Python String Exercise
+Python Data Structure Exercise for Beginners
+Python Random Data Generation Exercise
+Python NumPy Exercise
+Python Pandas Exercise
+Python Matplotlib Exercise
+Python Database Exercise
+All Topics
+All Topics
+Footer
+Follow pynative
+
+Home
+NewsLetter
+About Us
+Contact Us
+
+  
+  
+
+Learn
+
+Python MySQL Tutorial
+Python PostgreSQL Tutorial
+Generate Random data in Python
+Python Secrets Module
+Python UUID Module
+Python Basics
+[/] Practice
+
+Python Code Editor
+Python Exercises
+Python Tricks
+Legal Stuff:
+
+Privacy Policy
+Cookie Policy
+Terms Of Use
+Contact Us
+Copyright © 2018-2019 · [pynative.com]
+
+ABOUT US
+CONTACT US
+PRIVACY POLICY
+SITEMAP
+RSS
+FACEBOOK
+TWITTER
+G+
+We use cookies to ensure that you have the best possible experience on our website.ACCEPTLEARN MORE
